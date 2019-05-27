@@ -77,5 +77,15 @@ class TicTacToe
     end
   end
 
+  def won?()
+    all_empty = @board.all? {|x| x == " "}
+    if all_empty == true
+      return false
+  end
+
+  def full?()
+    !@board.any?{|i| i == " "}
+  end
+
 
 end
