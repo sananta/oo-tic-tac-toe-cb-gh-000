@@ -101,5 +101,14 @@ class TicTacToe
     end
   end
 
+  def winner()
+    winningCombo = won?()
+    if !winningCombo.nil?
+      return @board[winningCombo[0]]
+    else
+      return nil
+    end
+  end
+
 
 end
