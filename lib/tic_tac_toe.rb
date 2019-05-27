@@ -87,39 +87,4 @@ class TicTacToe
     !@board.any?{|i| i == " "}
   end
 
-  def draw?()
-    !won?() && full?()
-  end
-
-  def over?()
-    if draw?()
-      return true;
-    elsif won?()
-      return true;
-    else
-      return false;
-    end
-  end
-
-  def winner()
-    winningCombo = won?()
-    if !winningCombo.nil?
-      return @board[winningCombo[0]]
-    else
-      return nil
-    end
-  end
-
-  def play()
-    while !over?()
-      turn()
-    end
-
-    if won?()
-      puts "Congratulations #{winner()}!"
-    else
-      puts "Cat's Game!"
-    end
-  end
-end
 end
