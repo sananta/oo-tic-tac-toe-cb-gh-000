@@ -82,6 +82,10 @@ class TicTacToe
     if all_empty == true
       return false
     end
+    
+    winningCombo = WIN_COMBINATIONS.detect do |combo|
+      combo.all? {|x| board[x] == "X"} || combo.all? {|x| board[x] == "O"}
+    end
   end
 
   def full?()
